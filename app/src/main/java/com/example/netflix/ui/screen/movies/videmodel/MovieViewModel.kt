@@ -14,6 +14,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Dispatchers
 import javax.inject.Inject
 
 @HiltViewModel
@@ -50,7 +51,7 @@ class MovieViewModel @Inject constructor(
     }
 
     private fun fetchNowPlayingMovies(page:Int) {
-        viewModelScope.launch(exceptionHandler) {
+        viewModelScope.launch(Dispatchers.IO+exceptionHandler) {
             try {
                 val movieDbResultNowPlaying = remoteDataSource.fetchNowPlayingMovies(page = page).first()
                 localDataSource.insertMovieDbResultNowPlaying(
@@ -78,7 +79,7 @@ class MovieViewModel @Inject constructor(
 
 
     private fun fetchUpcomingMovies(page:Int) {
-        viewModelScope.launch(exceptionHandler) {
+        viewModelScope.launch(Dispatchers.IO+exceptionHandler) {
             try {
                 val movieDbResultUpcoming = remoteDataSource.fetchUpcomingMovies(page = page).first()
                 localDataSource.insertMovieDbResultUpcoming(
@@ -106,7 +107,7 @@ class MovieViewModel @Inject constructor(
 
 
     private fun fetchPopularMovies(page:Int) {
-        viewModelScope.launch(exceptionHandler) {
+        viewModelScope.launch(Dispatchers.IO+exceptionHandler) {
             try {
                 val movieDbResultPopular = remoteDataSource.fetchPopularMovies(page = page).first()
                 localDataSource.insertMovieDbResultPopular(
