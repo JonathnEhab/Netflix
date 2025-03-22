@@ -6,8 +6,8 @@ import com.example.domain.models.models.movieresult.MovieResult
 import com.example.domain.models.models.playingNow.MovieDbResultNowPlaying
 import com.example.domain.models.models.popular.MovieDbResultPopular
 import com.example.domain.models.models.upcoming.MovieDbResultUpcoming
-import com.example.netflix.repository.remote.RemoteDataSource
-import com.example.netflix.repository.room.LocalDataSource
+import com.example.repository.remote.RemoteDataSource
+import com.example.repository.room.LocalDataSource
 import com.example.netflix.state.ApiState
 import com.example.netflix.state.NetworkErrors
 import dagger.hilt.android.lifecycle.HiltViewModel

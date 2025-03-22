@@ -1,5 +1,6 @@
 package com.example.netflix.ui.screen.movies
 
+import android.content.res.Resources.Theme
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
@@ -7,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Card
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.material3.darkColorScheme
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -28,7 +30,7 @@ fun MovieScreen(modifier: Modifier = Modifier, viewModel: MovieViewModel = hiltV
     LazyColumn(
         modifier = Modifier
             .fillMaxSize()
-            .padding(top = 20.dp, start = 15.dp)
+            .padding(top = 25.dp, start = 15.dp)
     ) {
         item { MovieSection(title = "Now Playing", state = nowPlayingState) }
         item { MovieSection(title = "Popular Movies", state = popularState) }
@@ -39,7 +41,7 @@ fun MovieScreen(modifier: Modifier = Modifier, viewModel: MovieViewModel = hiltV
 @Composable
 fun MovieSection(title: String, state: ApiState<List<MovieResult>>) {
     Column(modifier = Modifier.padding(vertical = 8.dp)) {
-        Text(text = title, style = MaterialTheme.typography.titleLarge, color = Color.White)
+        Text(text = title, style = MaterialTheme.typography.titleLarge, color = Color.Red)
 
         when (state) {
             is ApiState.Loading -> {
@@ -75,7 +77,7 @@ fun ItemMovie(movie: MovieResult) {
                     .height(200.dp)
                     .fillMaxWidth()
             )
-            Text(text = movie.title, style = MaterialTheme.typography.bodyMedium, color = Color.White)
+            Text(text = movie.title, style = MaterialTheme.typography.bodyMedium, color = Color.White, maxLines = 1)
             Text(text = "⭐ ${movie.vote_average}", style = MaterialTheme.typography.bodySmall, color = Color.Yellow)
         }
     }

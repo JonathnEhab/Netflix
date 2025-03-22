@@ -1,9 +1,9 @@
 package com.example.netflix.di
 
-import com.example.netflix.repository.remote.RemoteDataSource
-import com.example.netflix.repository.remote.RemoteDataSourceImpl
-import com.example.netflix.repository.room.LocalDataSource
-import com.example.netflix.repository.room.LocalDataSourceImpl
+import com.example.repository.remote.RemoteDataSource
+import com.example.repository.remote.RemoteDataSourceImpl
+import com.example.repository.room.LocalDataSource
+import com.example.repository.room.LocalDataSourceImpl
 import com.example.remote.apiservice.ApiService
 import com.example.room.MovieDao
 import dagger.Module

@@ -1,4 +1,4 @@
-package com.example.netflix.repository.room
+package com.example.repository.room
 
 import com.example.domain.models.models.moviedetails.MovieDetails
 import com.example.domain.models.models.playingNow.MovieDbResultNowPlaying

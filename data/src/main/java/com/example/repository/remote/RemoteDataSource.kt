@@ -1,4 +1,4 @@
-package com.example.netflix.repository.remote
+package com.example.repository.remote
 
 import com.example.domain.models.models.moviedetails.MovieDetails
 import com.example.domain.models.models.playingNow.MovieDbResultNowPlaying
